@@ -197,6 +197,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
             FalsingCollector falsingCollector,
             BroadcastDispatcher broadcastDispatcher,
             NotificationGutsManager notificationGutsManager,
+            NotificationInterruptStateProvider notificationInterruptStateProvider,
             VisualInterruptionDecisionProvider visualInterruptionDecisionProvider,
             ShadeExpansionStateManager shadeExpansionStateManager,
             KeyguardViewMediator keyguardViewMediator,
@@ -282,11 +283,11 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
             AlternateBouncerInteractor alternateBouncerInteractor,
             UserTracker userTracker,
             Provider<FingerprintManager> fingerprintManager,
-            TunerService tunerService,
             ActivityStarter activityStarter,
             SceneContainerFlags sceneContainerFlags,
-            SysUiState sysUiState,
             BurnInProtectionController burnInProtectionController,
+            SysUiState sysUiState,
+            TunerService tunerService,
             Optional<ReverseChargingViewController> reverseChargingViewControllerOptional,
             WallpaperNotifier wallpaperNotifier,
             SmartSpaceController smartSpaceController
@@ -294,7 +295,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
         super(context, notificationsController, fragmentService, lightBarController, autoHideController, statusBarInitializer, 
                 statusBarWindowController, statusBarWindowStateController, statusBarModeRepository, keyguardUpdateMonitor, 
                 statusBarSignalPolicy, pulseExpansionHandler, notificationWakeUpCoordinator, keyguardBypassController, keyguardStateController, 
-                headsUpManager, dynamicPrivacyController, falsingManager, falsingCollector, broadcastDispatcher, notificationGutsManager, 
+                headsUpManager, dynamicPrivacyController, falsingManager, falsingCollector, broadcastDispatcher, notificationGutsManager, notificationInterruptStateProvider, 
                 visualInterruptionDecisionProvider, shadeExpansionStateManager, keyguardViewMediator, displayMetrics, metricsLogger, shadeLogger, 
                 javaAdapter, uiBgExecutor, shadeSurface, notificationMediaManager, notificationLockscreenUserManagerGoogle, remoteInputManager, 
                 quickSettingsController, userSwitcherController, batteryController, colorExtractor, screenLifecycle, wakefulnessLifecycle, 
@@ -309,7 +310,7 @@ public class CentralSurfacesGoogle extends CentralSurfacesImpl {
                 screenOffAnimationController, wallpaperController, statusBarHideIconsForBouncerManager, lockscreenShadeTransitionController, featureFlags, 
                 keyguardUnlockAnimationController, mainHandler, delayableExecutor, messageRouter, wallpaperManager, startingSurfaceOptional, activityLaunchAnimator, jankMonitor, 
                 deviceStateManager, wiredChargingRippleController, dreamManager, cameraLauncherLazy, lightRevealScrimViewModelLazy, lightRevealScrim, 
-                alternateBouncerInteractor, userTracker, fingerprintManager, tunerService, activityStarter, sceneContainerFlags, sysUiState, burnInProtectionController);
+                alternateBouncerInteractor, userTracker, fingerprintManager, activityStarter, sceneContainerFlags, burnInProtectionController, sysUiState, tunerService);
         mContext = context;
         mBatteryStateChangeCallback = new BatteryController.BatteryStateChangeCallback() {
             @Override
